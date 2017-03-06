@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306061808) do
-
-  create_table "MSreplication_options", id: false, force: :cascade do |t|
-  end
+ActiveRecord::Schema.define(version: 20170306063924) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -23,22 +20,17 @@ ActiveRecord::Schema.define(version: 20170306061808) do
     t.datetime "updated_at",                    null: false
   end
 
-  create_table "inventory", id: false, force: :cascade do |t|
+  create_table "customer", id: false, force: :cascade do |t|
     t.integer "id"
-    t.string  "name",     limit: 50
-    t.integer "quantity"
+    t.string  "firstname", limit: 50
+    t.string  "lastname",  limit: 50
   end
 
-  create_table "spt_fallback_db", id: false, force: :cascade do |t|
-  end
-
-  create_table "spt_fallback_dev", id: false, force: :cascade do |t|
-  end
-
-  create_table "spt_fallback_usg", id: false, force: :cascade do |t|
-  end
-
-  create_table "spt_monitor", id: false, force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
